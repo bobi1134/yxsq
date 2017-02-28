@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="nothing-admin-sq" namespace="/admin/sq" extends="yxsq_Nothing">
+		<!-- 后台管理系统 - 查询所有社区 -->
+		<action name="admin_selectAllSq" class="org.yxsq.action.admin.sq.Admin_SqAction" method="admin_selectAllSq">
+			<result>/WEB-INF/jsp/admin/sq/sq.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 导出查询后满足条件的社区 -->
+		<action name="admin_excelSQ" class="org.yxsq.action.admin.sq.Admin_SqAction" method="admin_excelSQ">
+		</action>
+		
+		<!-- 后台管理系统 - 查询所有建立社区申请 -->
+		<action name="admin_selectAllPrepareSq" class="org.yxsq.action.admin.sq.Admin_SqAction" method="admin_selectAllPrepareSq">
+			<result>/WEB-INF/jsp/admin/sq/prepare_sq.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 通过请求 -->
+		<action name="admin_passPrepareSq" class="org.yxsq.action.admin.sq.Admin_SqAction" method="admin_passPrepareSq">
+			<result type="chain">admin_selectAllPrepareSq</result>
+		</action>
+		
+		<!-- 后台管理系统 - 拦截社区建立请求 -->
+		<action name="admin_failPrepareSq" class="org.yxsq.action.admin.sq.Admin_SqAction" method="admin_failPrepareSq">
+			<result type="chain">admin_selectAllPrepareSq</result>
+		</action>
+		
+		<!-- 后台管理系统 - 跳到修改社区资料页面 -->
+		<action name="admin_updateSqPage" class="org.yxsq.action.admin.sq.Admin_SqAction" method="admin_updateSqPage">
+			<result>/WEB-INF/jsp/admin/sq/update_sq_page.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 修改社区资料 -->
+		<action name="updateSq" class="org.yxsq.action.admin.sq.Admin_SqAction" method="updateSq">
+			<result>/WEB-INF/jsp/admin/sq/update_sq_page.jsp</result>
+		</action>
+	</package>
+</struts>

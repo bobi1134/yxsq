@@ -1,0 +1,46 @@
+*{margin:0px;padding:0px;}
+body{font-size:12px;font-family:"微软雅黑";color:#666;background:#dceffe}
+a{text-decoration:none;color:#666;}
+a:hover{color:#92afcd}
+ul{list-style:none}
+img{border:none}
+/* wrap start */
+.warp{width:980px;height:100%;margin:0px auto;background:#f3f4f8;position: relative;}
+/* header start */
+.warp .header{width:980px;height:30px;font-size:14px;background: #F7F9FB;}
+.warp .header .ul_1{float:left}
+.warp .header .ul_1 li i{width:20px;height:20px;display:inline-block;border-radius:10px;background:url(../images/logo.png); background-position:-251px -145px;float:left;}
+.warp .header .ul_1 li span{float:left;margin-left:3px;font-size:14px;}
+.warp .header .ul_1 li{margin:5px 0px 0px 8px}
+.warp .header .ul_2{float:right;margin:5px 10px 0px 0px;}
+.warp .header .ul_2 li{float:left}
+.warp .header .ul_2 .li_1{height:30px;}
+.warp .header .ul_2 .li_1 img{border-radius:10px;float:left;margin:0px 3px 0px 0px}
+.warp .header .ul_2 .li_1 span{width:50px;height:30px;display:inline-block;float:left;}
+.warp .header .ul_2 .li_2 i{width:18px;height:20px;display:inline-block;border-radius:10px;background:url(../images/logo_5.png); background-position:-22px -22px;float:left;}
+/* end header */ 
+/* content_1 start */
+.warp .content_1{width:978px;height: 40px;border:1px dotted}
+.warp .content_1 ._1{width:978px;height:15px;line-height:15px;margin-top:13px}
+.warp .content_1 ._1 .mess{width:200px;height:15px;display:block;margin-left:12px;}
+
+.warp .content_2{width:978px;border:1px dotted;margin-top:10px}
+.warp .content_2 .form{font-size:14px;width:550px;margin:10px auto}
+.warp .content_2 .text_1{width:465px;margin-top:30px;height:25px;margin-left:10px;font-family:"微软雅黑"}
+.warp .content_2 .btn{width:80px;height:30px;border:0 none;background:#3a83f1;border-radius:3px;font-family:"微软雅黑";color:#fff;line-height:30px;margin-left:130px;margin-top:20px}
+.warp .content_2 .btn:hover{cursor:pointer;}
+.warp .content_2 .btn:focus{outline:none}
+
+.warp .applyRules{width:978px;border:1px dotted;border-top:none;}
+.warp .one{width:978px;height:50px;font-size:20px;font-weight:bold;line-height:50px;text-align:center;}
+.warp .two{width:600px;margin:0px auto;margin-bottom:20px}
+.warp .two ul{list-style:disc;}
+.warp .two ul li{width:570px;border-bottom:1px dashed;margin:5px 10px 5px 20px;line-height:30px;font-size:16px;}
+/* end content_1 */
+/* end warp */
+/* footer start */
+.footer{text-align:center;margin:5px 0px 5px 0px;}
+/* end footer */
+
+
+

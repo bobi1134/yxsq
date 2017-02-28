@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="nothing-admin-img" namespace="/admin/img" extends="yxsq_Nothing">
+		<!-- 后台管理系统 - 查询首页的所有图片 -->
+		<action name="admin_selectImgs" class="org.yxsq.action.admin.img.Admin_ImgAction" method="admin_selectImgs">
+			<result>/WEB-INF/jsp/admin/img/img.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 预览首页滚动图片 -->
+		<action name="admin_prevImg_1" class="org.yxsq.action.admin.img.Admin_ImgAction" method="admin_prevImg_1">
+			<result>/WEB-INF/jsp/admin/img/prevImg_1.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 预览首页背景图片 -->
+		<action name="admin_prevImg_2" class="org.yxsq.action.admin.img.Admin_ImgAction" method="admin_prevImg_2">
+			<result>/WEB-INF/jsp/admin/img/prevImg_2.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 查询所有的导航图片 -->
+		<action name="admin_selectdhImg" class="org.yxsq.action.admin.img.Admin_ImgAction" method="admin_selectdhImg">
+			<result>/WEB-INF/jsp/admin/img/dh_img.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 查询所有带<img>属性的所有帖子 -->
+		<action name="admin_selectAllImgTz" class="org.yxsq.action.admin.img.Admin_ImgAction" method="admin_selectAllImgTz">
+			<result>/WEB-INF/jsp/admin/img/all_imgTz.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 确认更换该图片导航信息 -->
+		<action name="admin_dhOk" class="org.yxsq.action.admin.img.Admin_ImgAction" method="admin_dhOk">
+			<result type="chain">admin_selectAllImgTz</result>
+		</action>
+		
+		<!-- 后台管理系统 - 查询首页所有的背景图片 -->
+		<action name="admin_selectbjImg" class="org.yxsq.action.admin.img.Admin_ImgAction" method="admin_selectbjImg">
+			<result>/WEB-INF/jsp/admin/img/bj_img.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 跳转到修改背景图片页面 -->
+		<action name="admin_updateBjPage" class="org.yxsq.action.admin.img.Admin_ImgAction" method="admin_updateBjPage">
+			<result>/WEB-INF/jsp/admin/img/update_bjImg_page.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 修改首页背景图片 -->
+		<action name="admin_updateBjImg" class="org.yxsq.action.admin.img.Admin_ImgAction" method="admin_updateBjImg">
+			<result>/WEB-INF/jsp/admin/img/update_bjImg_page.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 查询所有的用户头部背景图片 -->
+		<action name="admin_selectHomeImgs" class="org.yxsq.action.admin.img.Admin_ImgAction" method="admin_selectHomeImgs">
+			<result>/WEB-INF/jsp/admin/img/home_img.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 预览用户主页头部背景图片 -->
+		<action name="admin_prevHomeImg" class="org.yxsq.action.admin.img.Admin_ImgAction" method="admin_prevHomeImg"> 
+			<result>/WEB-INF/jsp/admin/img/prevImg_3.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 跳到修改用户主页头部主页背景图片页面 -->
+		<action name="admin_updateHomeTbBjPage" class="org.yxsq.action.admin.img.Admin_ImgAction" method="admin_updateHomeTbBjPage">
+			<result>/WEB-INF/jsp/admin/img/home_update_tbbjImg_page.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 修改用户主页头部背景 -->
+		<action name="admin_updateHomeTbBjImg" class="org.yxsq.action.admin.img.Admin_ImgAction" method="admin_updateHomeTbBjImg">
+			<result>/WEB-INF/jsp/admin/img/home_update_tbbjImg_page.jsp</result>
+		</action>
+	</package>
+</struts>

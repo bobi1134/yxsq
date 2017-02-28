@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="nothing-admin-user" namespace="/admin/user" extends="yxsq_Nothing">
+		<!-- 后台管理系统 异步登陆 -->
+		<action name="admin_userLoginAjax" class="org.yxsq.action.admin.user.Admin_UserLoginAjaxAction">
+			<interceptor-ref name="defaultStack"/>	
+		</action>
+		
+		<!-- 后台管理系统 - 查询所有用户 -->
+		<action name="admin_selectAllUser" class="org.yxsq.action.admin.user.Admin_UserAction" method="admin_selectAllUser">
+			<result>/WEB-INF/jsp/admin/user/user.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 导出会员资料 -->
+		<action name="admin_excelHY" class="org.yxsq.action.admin.user.Admin_UserAction" method="admin_excelHY">
+		</action>
+		
+		<!-- 后台管理系统 - 退出 -->
+		<action name="admin_loginOut" class="org.yxsq.action.admin.user.Admin_UserAction" method="admin_loginOut">
+			<result>/WEB-INF/jsp/admin/main.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 跳到修改用户资料界面-->
+		<action name="admin_updateUserPage" class="org.yxsq.action.admin.user.Admin_UserAction" method="admin_updateUserPage">
+			<result>/WEB-INF/jsp/admin/user/update_user_page.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 修改用户资料 -->
+		<action name="admin_updateUser" class="org.yxsq.action.admin.user.Admin_UserAction" method="admin_updateUser">
+			<result>/WEB-INF/jsp/admin/user/update_user_page.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 跳到添加用户页面 -->
+		<action name="admin_addUserPage">
+			<result>/WEB-INF/jsp/admin/user/add_user_page.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 添加用户 -->
+		<action name="admin_addUser" class="org.yxsq.action.admin.user.Admin_UserAction" method="admin_addUser">
+			<result>/WEB-INF/jsp/admin/user/add_user_page.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 查询各个社区的Y主申请 -->
+		<action name="admin_selectAllPrepareUserYZ" class="org.yxsq.action.admin.user.Admin_UserAction" method="admin_selectAllPrepareUserYZ">
+			<result>/WEB-INF/jsp/admin/user/prepare_user.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 通过用户Y主申请 -->
+		<action name="admin_passPrepareUser" class="org.yxsq.action.admin.user.Admin_UserAction" method="admin_passPrepareUser">
+			<result>/WEB-INF/jsp/admin/user/prepare_user.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 不通过用户Y主申请 -->
+		<action name="admin_failPrepareUser" class="org.yxsq.action.admin.user.Admin_UserAction" method="admin_failPrepareUser">
+			<result type="chain">admin_selectAllPrepareUserYZ</result>
+		</action>
+	</package>
+</struts>

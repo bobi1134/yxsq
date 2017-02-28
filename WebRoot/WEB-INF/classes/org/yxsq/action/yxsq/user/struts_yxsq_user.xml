@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="nothing-yxsq-user" namespace="/yxsq/user" extends="yxsq_Nothing">
+		<!-- session用户首页 -->
+		<action name="homepage" class="org.yxsq.action.yxsq.user.UserAction" method="selectUser">
+			<result>/WEB-INF/jsp/yxsq/homepage.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 点击其他用户首页 -->
+		<action name="other_homepage" class="org.yxsq.action.yxsq.user.UserAction" method="selectClickUser">
+			<result>/WEB-INF/jsp/yxsq/other_homepage.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 异步修改用户主页头部背景 -->
+		<action name="updateHomepageImgAjax" class="org.yxsq.action.yxsq.user.UpdateHomepageImgAjax">
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 跳到修改用户资料页面 -->
+		<action name="goUpdateUserZLpage" class="org.yxsq.action.yxsq.user.UserAction" method="goUpdateUserZLpage">
+			<result>/WEB-INF/jsp/yxsq/homepage_information_updatePage.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 用户异步修改资料 -->
+		<action name="updateHomePageUserMesAjax" class="org.yxsq.action.yxsq.user.UpdateHomePageUserMesAjax">
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 用户头像异步修改 -->
+		<action name="updateHomePageUserTxAjax" class="org.yxsq.action.yxsq.user.UpdateHomePageUserTxAjaxAction">
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 跳到用户注册页面 -->
+		<action name="registerUser">
+			<result>/WEB-INF/jsp/yxsq/register.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 注册用户时 异步校验username是否存在 -->
+		<action name="check_usernameAjax" class="org.yxsq.action.yxsq.user.RegisterCheck_username_AjaxAction">
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 注册用户时 异步校验nickname是否存在 -->
+		<action name="check_nicknameAjax" class="org.yxsq.action.yxsq.user.RegisterCheck_nickname_AjaxAction">
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 注册用户时 异步校验email是否存在 -->
+		<action name="check_emailAjax" class="org.yxsq.action.yxsq.user.RegisterCheck_email_AjaxAction">
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 添加用户 -->
+		<action name="addUser" class="org.yxsq.action.yxsq.user.UserAction" method="addUser">
+			<result name="success">/WEB-INF/jsp/yxsq/go.jsp</result>
+			<result name="error">/WEB-INF/jsp/yxsq/register.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 激活用户 -->
+		<action name="activeUser" class="org.yxsq.action.yxsq.user.UserAction" method="activeUser">
+			<result name="success">/WEB-INF/jsp/yxsq/go_2.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+	</package>
+</struts>

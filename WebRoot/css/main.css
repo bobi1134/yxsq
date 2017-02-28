@@ -1,0 +1,68 @@
+*{margin:0px;padding:0px;}
+body{font-size:12px;font-family:"微软雅黑";color:#666;}
+a{text-decoration:none;color:#666;}
+a:hover{color:#92afcd}
+ul{list-style:none}
+img{border:none}
+/* wrap start */
+.warp{width:980px;height:100%;margin:0px auto;background:#f4f7fc;}
+/* header start */
+.warp .header{width:980px;height:30px;font-size:14px;background: #F7F9FB;}
+.warp .header .ul_1{float:left}
+.warp .header .ul_1 li i{width:20px;height:20px;display:inline-block;border-radius:10px;background:url(../images/logo.png); background-position:-251px -145px;float:left;}
+.warp .header .ul_1 li span{float:left;margin-left:3px;font-size:14px;}
+.warp .header .ul_1 li{margin:5px 0px 0px 8px}
+
+.warp .header .ul_2{float:right;margin:5px 10px 0px 0px;}
+.warp .header .ul_2 li{float:left}
+.warp .header .ul_2 .li_1{height:30px;}
+.warp .header .ul_2 .li_1 img{border-radius:10px;float:left;margin:0px 3px 0px 0px}
+.warp .header .ul_2 .li_1 span{width:50px;height:30px;display:inline-block;float:left;}
+.warp .header .ul_2 .li_2 i{width:18px;height:20px;display:inline-block;border-radius:10px;background:url(../images/logo_5.png); background-position:-22px -22px;float:left;}
+/* end header */ 
+/* head start */
+.warp .dh{width:980px;height:215px;}
+.warp .dh .img{width:840px;height:163px;margin: 0px auto}
+.warp .dh .img img{float:left;}
+.warp .dh .img .img_2{margin:40px 0px 0px 0px}
+.warp .dh .search{width:800px;height:50px;margin: 0px auto}
+.warp .dh .search .input{width:624px;height:40px;margin:0px auto;}
+.warp .dh .search .input .input_1{width:500px;height:40px;font-family:"微软雅黑";font-size:16px;padding: 0px 10px 0px 10px}
+.warp .dh .search .input .input_1:focus{outline:none;}
+.warp .dh .search .input .input_2{width:100px;height:44px;background:#e9e9e9;font-family:"微软雅黑";border:0 none;font-size:16px;margin: 0px 0px 0px -4px}
+.warp .dh .search .input .input_2:hover{cursor:pointer;}
+.warp .dh .search .input .input_2:focus{outline:none;}
+
+.warp .dh .search .tip span{height:20px;margin: 4px 0px 0px 87px;line-height: 20px;}
+.warp .dh .search .tip a{color:blue}
+/* end head */
+/* content_1 start */
+.warp .content_1{width:980px;margin-top:20px;}
+.warp .content_1 .xt{width:980px;height:2px;background:#de0052;}
+.warp .content_1 .all{width:876px;margin:0px auto;overflow:hidden}
+.warp .content_1 .all ul li{width:161px;height:35px; float:left;background:url(../images/homepage/logo_10.png) -0px -238px;line-height:35px;margin:8px 0px 10px 8px;padding-left: 4px;text-align:center;}
+.warp .content_1 .all ul li:hover{background: url(../images/homepage/logo_10.png) -0px -285px;color:#666}
+/* end content_1 */
+/* end warp */
+/* footer start */
+.footer{text-align:center;margin:5px 0px 5px 0px;}
+/* end footer */
+/* 弹出框 start */
+.tck{width:334px;height:387px;background:#F5F5DC;position: absolute;top:130px;left:522px;z-index:2;border-radius:5px;border: 1px solid #999;display:none}
+.tck .box_1 ._1{width:334px;height:51px;display:block;border-bottom: 1px solid #999;text-align:center;line-height:51px;font-size:18px;}
+.tck .box_1 .qx{width:16px;height:16px;background:#5E5E5E;display:block;float:right;margin:-53px -1px 0px 0px;text-align:center;line-height:13px;border-radius:8px;color:#fff;}
+.tck .box_1 .qx:hover{cursor:pointer}
+.tck .box_2{width:334px;height:260px;}
+.tck .box_2 span{width:284px;height:16px;margin:12px 0px 0px 25px;display:block;color:red}
+.tck .box_2 ._1{width:284px;height:40px;margin:2px 0px 0px 25px;font-family:"微软雅黑";}
+.tck .box_2 ._2{width:284px;height:40px;margin:20px 0px 0px 25px;font-family:"微软雅黑";}
+.tck .box_2 .login_input{width:284px;height:40px;margin:20px 0px 0px 25px;font-family:"微软雅黑";border:0 none;background:#5a98de;color:#fff;font-size:18px;border-radius: 5px}
+.tck .box_2 .login_input:hover{cursor:pointer;background-color: #6aa2e0;}
+.tck .box_2 .login_input:focus{outline:none;}
+.tck .box_2 img{width:180px;height:40px;margin:20px 0px 0px 25px;}
+.tck .box_2 ._3{width:82px;height:36px;margin:20px 22px 0px 0px;float:right;font-family:"微软雅黑";}
+.tck .box_3{width:334px;height:30px;margin-top:31px;}
+.tck .box_3 ul{margin:0px 0px 0px 118px;font-size:12px;}
+.tck .box_3 ul li{float:left}
+.yy{width:1348px;height:2060px;background:#000;position: absolute;top:0px;left:0px;right:0px;bottom:0px;opacity:0.2;z-index:1;display:none}
+/* end 弹出框 */

@@ -1,0 +1,21 @@
+*{margin:0px;padding:0px;}
+body{font-size:12px;font-family:"微软雅黑";color:#666;background:url(../images/bg.png)}
+a{text-decoration:none;color:#666;}
+a:hover{color:#92afcd}
+ul{list-style:none}
+img{border:none}
+
+/* wrp start */
+.warp{min-width: 1349px;}
+/* content_1 start */
+.content_1{width:980px;margin:0px auto;}
+.content_1 .login{width:980px;height:677px;background:url(../images/login.jpg) no-repeat;margin:auto;position: relative}
+.content_1 .login .text_1{width: 312px;position: absolute;left: 355px;top: 350px;height: 31px;font-family:"微软雅黑"}
+.content_1 .login .text_2{width: 314px;position: absolute;left: 355px;top: 399px;height: 31px;font-family:"微软雅黑"}
+.content_1 .login .btn{width: 114px;height: 52px;position: absolute;left: 433px;top: 469px;background: #8eba4b;border-radius: 20px;border:0 none;color:#fff;font-family:"微软雅黑";font-size:18px;}
+.content_1 .login .btn:hover{cursor:pointer;}
+.content_1 .login .btn:focus{outline:none}
+
+.content_1 .bc{width:980px;background:#121315;}
+/* end content_1 */
+/* end wrp */

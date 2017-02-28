@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="nothing-admin-tz" namespace="/admin/tz" extends="yxsq_Nothing">
+		<!-- 后台管理系统 - 多条件查询所有的帖子 -->
+		<action name="admin_selectAllTz" class="org.yxsq.action.admin.tz.Admin_TzAction" method="admin_selectAllTz">
+			<result>/WEB-INF/jsp/admin/tz/tz.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 预览帖子 -->
+		<action name="admin_prevTz" class="org.yxsq.action.admin.tz.Admin_TzAction" method="admin_prevTz">
+			<result>/WEB-INF/jsp/admin/tz/prevTz.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 首页加精 -->
+		<action name="addTojingTz" class="org.yxsq.action.admin.tz.Admin_TzAction" method="addTojingTz">
+			<!-- <result type="chain">admin_selectAllTz</result>  -->
+			<result>/WEB-INF/jsp/admin/tz/tz.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 首页加火 -->
+		<action name="addTohuoTz" class="org.yxsq.action.admin.tz.Admin_TzAction" method="addTohuoTz">
+			<!-- <result type="chain">admin_selectAllTz</result>  -->
+			<result>/WEB-INF/jsp/admin/tz/tz.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 取消首页加精 -->
+		<action name="deleteTojingTz" class="org.yxsq.action.admin.tz.Admin_TzAction" method="deleteTojingTz">
+			<!-- <result type="chain">admin_selectAllTz</result>  -->
+			<result>/WEB-INF/jsp/admin/tz/tz.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 取消首页加火 -->
+		<action name="deleteTohuoTz" class="org.yxsq.action.admin.tz.Admin_TzAction" method="deleteTohuoTz">
+			<!-- <result type="chain">admin_selectAllTz</result> -->
+			<result>/WEB-INF/jsp/admin/tz/tz.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 查询首页所有精帖 -->
+		<action name="admin_selectAllIndexJingTz" class="org.yxsq.action.admin.tz.Admin_TzAction" method="admin_selectAllIndexJingTz">
+			<result>/WEB-INF/jsp/admin/tz/jing_tz.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 精帖管理页面取消该帖子加精 -->
+		<action name="deleteTojingTz_2" class="org.yxsq.action.admin.tz.Admin_TzAction" method="deleteTojingTz_2">
+			<result type="chain">admin_selectAllIndexJingTz</result>
+		</action>
+		
+		<!-- 后台管理系统 - 查询首页所有热帖 -->
+		<action name="admin_selectAllIndexHuoTz" class="org.yxsq.action.admin.tz.Admin_TzAction" method="admin_selectAllIndexHuoTz">
+			<result>/WEB-INF/jsp/admin/tz/huo_tz.jsp</result>
+		</action>
+		
+		<!-- 后台管理系统 - 精帖管理页面取消该帖子加火 -->
+		<action name="deleteTohuoTz_2" class="org.yxsq.action.admin.tz.Admin_TzAction" method="deleteTohuoTz_2">
+			<result type="chain">admin_selectAllIndexHuoTz</result>
+		</action>
+	</package>
+</struts>

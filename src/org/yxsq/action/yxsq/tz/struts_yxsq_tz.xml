@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="nothing-yxsq-tz" namespace="/yxsq/tz" extends="yxsq_Nothing">
+		<!-- 查询该帖的所有评论 -->
+		<action name="selectAllRemark" class="org.yxsq.action.yxsq.tz.TzAction" method="selectAllRemark">
+			<result>/WEB-INF/jsp/yxsq/invitation.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 异步添加二级评论 -->
+		<action name="lchRemarkAjax" class="org.yxsq.action.yxsq.tz.InsetLchRemarkAjax">
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 添加一级评论 -->
+		<action name="insertOneRemark" class="org.yxsq.action.yxsq.tz.TzAction" method="insertOneRemark">
+			<result>/WEB-INF/jsp/yxsq/invitation.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+	</package>
+</struts>

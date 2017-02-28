@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="nothing-loginout" namespace="/loginout" extends="yxsq_Nothing">
+		<!-- welcome.jsp退出 -->
+		<action name="loginout_1" class="org.yxsq.action.loginout.LoginOutAction_1">
+			<result>/WEB-INF/jsp/yxsq/welcome.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- main.jsp退出 -->
+		<action name="loginout_2" class="org.yxsq.action.loginout.LoginOutAction_2">
+			<result>/WEB-INF/jsp/yxsq/main.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- community.jsp退出 -->
+		<action name="loginout_3" class="org.yxsq.action.loginout.LoginOutAction_3">
+			<result>/WEB-INF/jsp/yxsq/community.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- invitation.jsp退出 -->
+		<action name="loginout_4" class="org.yxsq.action.loginout.LoginOutAction_4">
+			<result>/WEB-INF/jsp/yxsq/invitation.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 3DStreetscape.jsp退出 -->
+		<action name="loginout_5" class="org.yxsq.action.loginout.LoginOutAction_5">
+			<result>/WEB-INF/jsp/yxsq/3DStreetscape.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+	</package>
+</struts>

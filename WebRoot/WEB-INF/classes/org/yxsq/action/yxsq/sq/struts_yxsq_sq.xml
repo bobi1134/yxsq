@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="nothing-yxsq-sq" namespace="/yxsq/sq" extends="yxsq_Nothing">
+		<!-- 查询所有社区 -->
+		<action name="main" class="org.yxsq.action.yxsq.sq.SqAction" method="selectSq">
+			<result>/WEB-INF/jsp/yxsq/main.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 根据社区名进入社区 -->
+		<action name="sqGo" class="org.yxsq.action.yxsq.sq.SqAction" method="sqGo">
+			<result name="success">/WEB-INF/jsp/yxsq/community.jsp</result>
+			<result name="error">/WEB-INF/jsp/yxsq/main.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 添加帖子 -->
+		<action name="insertTz" class="org.yxsq.action.yxsq.sq.SqAction" method="insertTz">
+			<param name="sqName">${sq.sq_name}</param>
+			<result type="chain">sqGo</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- Y主点击修改社区资料跳转页面 -->
+		<action name="updateSqZLPage" class="org.yxsq.action.yxsq.sq.SqAction" method="updateSqZLPage">
+			<result>/WEB-INF/jsp/yxsq/community_information_updatePage.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- Y主修改所管社区资料 -->
+		<action name="updateSqZL" class="org.yxsq.action.yxsq.sq.UpdateSqZLAction" method="updateSqZL">
+			<result>/WEB-INF/jsp/yxsq/community_information_updatePage.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 跳转到添加社区页面 -->
+		<action name="goAddSqPage">
+			<result>/WEB-INF/jsp/yxsq/community_addCommunityPage.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 发送添加社区请求 -->
+		<action name="addSqRequest" class="org.yxsq.action.yxsq.sq.SqAction" method="addSqRequest">
+			<result>/WEB-INF/jsp/yxsq/community_addCommunityPage.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 在社区中点击"校园3D导航" 跳转到该大学的3D街景图 -->
+		<action name="threeDStreetscape" class="org.yxsq.action.yxsq.sq.SqAction" method="threeDStreetscape">
+			<result>/WEB-INF/jsp/yxsq/3DStreetscape.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 表白墙 - onePage -->
+		<action name="bb_onePage" class="org.yxsq.action.yxsq.sq.SqAction" method="bb_onePage">
+			<result>/WEB-INF/jsp/yxsq/bb_onePage.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 表白墙 - twoPage -->
+		<action name="bb_twoPage" class="org.yxsq.action.yxsq.sq.SqAction" method="bb_twoPage">
+			<result>/WEB-INF/jsp/yxsq/bb_twoPage.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 添加表白 -->
+		<action name="addBb" class="org.yxsq.action.yxsq.sq.AddBbAjaxAction">
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 跳到当前用户申请当社区Y主页面 -->
+		<action name="applySqYZPage" class="org.yxsq.action.yxsq.sq.SqAction" method="applySqYZPage">
+			<result>/WEB-INF/jsp/yxsq/applySqYZ_page.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 用户异步申请社区Y主 -->
+		<action name="applySqYZFormAjax" class="org.yxsq.action.yxsq.sq.ApplySqYZFormAjaxAction">
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 异步添加用户爱逛社区 -->
+		<action name="addAgsqAjax" class="org.yxsq.action.yxsq.sq.AddAgsqAjaxAction">
+			<interceptor-ref name="defaultStack"/>
+		</action>
+	</package>
+</struts>

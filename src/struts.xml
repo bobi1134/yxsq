@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.action.extension" value="action,do"></constant>
+	<constant name="struts.custom.i18n.resources" value="messages"></constant>
+	
+	<package name="yxsq_Nothing" namespace="/" extends="struts-default">
+		
+		<!-- 登陆拦截器,拦截homepage.jsp和后台管理界面 -->
+		<!-- 这个拦截值拦截后台管理系统的请求 (*^__^*) 嘻嘻…… -->
+		<interceptors>
+			<interceptor name="loginInterceptor" class="org.tool.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="loginStack">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="loginInterceptor"/>
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- 为每个请求默认配置登陆拦截器 -->
+		<default-interceptor-ref name="loginStack"/>
+		
+		<global-results>
+			<result name="user_login">/WEB-INF/jsp/admin/login.jsp</result>
+		</global-results>
+	
+		<!-- 验证码 -->
+		<action name="verify" class="org.tool.verify.VerifyAction">
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 用户异步登陆 -->
+		<action name="loginAjax" class="org.yxsq.LoginAjaxAction">
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<!-- 直接跟xxx.action是直接跳到后台管理系统处理，在这里拦截所有！ -->
+		<action name="*">
+			<result>/WEB-INF/jsp/admin/{1}.jsp</result>
+		</action>
+		
+	</package>
+	
+	<!-- 导入其他模块 -->
+	<include file="org/yxsq/action/yxsq/user/struts_yxsq_user.xml"></include>
+	<include file="org/yxsq/action/yxsq/sq/struts_yxsq_sq.xml"></include>
+	<include file="org/yxsq/action/yxsq/tz/struts_yxsq_tz.xml"></include>
+	<include file="org/yxsq/action/yxsq/home/struts_yxsq_home.xml"></include>
+	<include file="org/yxsq/action/loginout/struts_loginout.xml"></include>
+	
+	<include file="org/yxsq/action/admin/user/struts_admin_user.xml"></include>
+	<include file="org/yxsq/action/admin/sq/struts_admin_sq.xml"></include>
+	<include file="org/yxsq/action/admin/tz/struts_admin_tz.xml"></include>
+	<include file="org/yxsq/action/admin/img/struts_admin_img.xml"></include>
+</struts>
